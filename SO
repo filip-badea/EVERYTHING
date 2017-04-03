@@ -1,11 +1,104 @@
 
+
+
+
 Curs 5 SO - Gestiunea memoriei
 
 
-Cuvinte cheie: 
+Cuvinte cheie: accesarea memoriei, adresarea memoriei, succesiune de adrese, partitionarea memoriei, protectia accesului, alocarea/ dealocarea memoriei, partajarea memoriei, framentarea, translatarea adreselor virtuale, suport hardware MMU, TLB, interactiunea cu alte subsisteme
 
 
 Ierarhie memorie - 
 
 
-Memoria Principala - RAM
+Memoria Principala - RAM, volatila nepersistenta
+cache pentru disc, lenta comparativ cu procesorul si rapida comparativ cu discul
+
+
+
+Memoria cache - intrea procesor si ram
+Este accessata de proc inainte de mem ram
+Cache hit/miss ratio
+In caz de miss se aloca/inlocueste o intrare cu noua informatie
+De avut in vedere sincronizarea cache ului pe multi procesor
+
+
+
+Spatiu de memorie - fiecare proces are asociat un spatiu de memorie nucleul avand un spatiu propriu, in general 1GB
+Este un spatiu de adrese valide ce pot fi accesate de un proces
+
+
+
+Address binding
+
+
+
+Adresa logica
+
+
+
+Adresa fizica
+
+
+
+Alocare
+
+
+
+Fragmentare
+
+
+
+
+Paginare
+
+
+
+
+
+Segmentare
+
+
+
+
+Selector segment
+
+
+
+
+Adresa liniara
+
+
+
+
+
+Pagina virtuala
+
+
+
+Pagina fizica
+
+
+
+Tabela de pagini
+
+
+
+MMU - memory management unit
+
+
+
+TLB
+
+
+
+Paginare ierarhica
+
+
+
+
+Tabela de pagini inversata
+
+
+
+
