@@ -9,33 +9,35 @@ public class Patrula {
     public String fileName;
 
 
-    public static boolean compute(GraphT graphT, int startNode, int goalNode) {
+    public static int compute(GraphT graphT, int startNode, int goalNode) {
+        int roads = 0;
         if(startNode == goalNode){
             System.out.println("Goal Node Found!");
             System.out.println(startNode);
         }
 
         Queue<Integer> queue = new LinkedList<>();
-        ArrayList<Integer> explored = new ArrayList<>();
+        Set<Integer> explored = new HashSet<>();
         queue.add(startNode);
-        explored.add(startNode);
-
+        //explored.add(startNode);
+        int theNeighbours = 1;
+        int count = 0;
         while(!queue.isEmpty()){
             int current = queue.remove();
             if(current == (goalNode)) {
-                System.out.println(explored);
-                return true;
+                //System.out.println(explored);
+                roads += 1;
             }
             else{
-                if(graphT.getNeighboursOf(current).isEmpty())
-                    return false;
-                else
-                    queue.addAll(graphT.getNeighboursOf(current));
+                List<Integer> nei = graphT.getNeighboursOf(current);
+                queue.addAll(nei);
+                theNeighbours += nei.size();
             }
-            explored.add(current);
+            if(!explored.add(current))
+                ;
         }
 
-        return false;
+        return roads;
     }
 
     public static void main(String[] args)
@@ -54,15 +56,20 @@ public class Patrula {
             for (int i = 0; i < numRoads; i++) {
                 current = br.readLine();
                 int fstCity = Integer.parseInt(current.substring(0,current.indexOf(" ")));
-                System.out.println(fstCity);
+                System.out.print(fstCity + " ");
                 int sndCity = Integer.parseInt((current.substring(current.indexOf(" ") + 1)));
                 System.out.println(sndCity);
                 grapht.addEdge(fstCity, sndCity);
                 grapht.addEdge(sndCity, fstCity);
             }
-            if(compute(grapht, numNodes, 1))
-                System.out.println("Drun gasit");;
+
             grapht.printGraph(grapht);
+
+            int x = compute(grapht, numNodes, 1);
+            if(x != 0)
+                System.out.println("Drumuri gasite - " + x);;
+
+
 
         }
         catch (IOException e){
