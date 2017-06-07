@@ -1,4 +1,10 @@
 
+Toti algoritmii posibili : DIJKSTRA, DFS, BFS, BF, FW, Kosaraju, Edmonds - Karp, Monte Carlo, Las Vegas, CTC
+
+
+
+
+
 Cele mai importante notiuni pentru grafuri
  Parcurgere
  Sortare topologică
@@ -10,4 +16,43 @@ Cele mai importante notiuni pentru grafuri
  Fluxuri maxime
 
 
-Toti algoritmii posibili : DIJKSTRA, DFS, BFS, BF, FW, Kosaraju, Edmonds - Karp, Monte Carlo, Las Vegas
+
+
+
+
+Dati exemplu de:
+Algoritm ce poate fi folosit pentru determinarea ciclurilor de cost negativ
+
+
+Tipuri de algoritmi si Euristici
+
+Definiție: Algoritm complet = algoritm de
+explorare care garantează descoperirea unei
+soluții, dacă problema acceptă soluție.
+ Algoritmii irevocabili sunt mai rapizi și consumă
+mai puține resurse decât cei tentativi, dar nu sunt
+compleți pentru că pierd informație.
+
+Algoritm generic de explorare
+
+Explorare(StInit, test_sol)
+ OPEN = {constr_nod(StInit)}; // starea inițiala
+ Cât timp (OPEN ≠ Ø)
+// mai am noduri de prelucrat
+ nod = selecție_nod(OPEN); // aleg un nod
+ Dacă (test_sol(nod)) Întoarce nod;
+// am găsit o soluție
+ OPEN = OPEN \ {nod} U expandare{nod};
+// extind căutarea
+ Întoarce insucces
+
+
+
+
+
+
+
+
+
+
+
