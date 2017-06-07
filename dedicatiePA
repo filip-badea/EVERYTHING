@@ -1,0 +1,13 @@
+
+Cele mai importante notiuni pentru grafuri
+ Parcurgere
+ Sortare topologică
+ Componente tare conexe
+ Puncte de articulație
+ Punți
+ Arbori minimi de acoperire
+ Drumuri de cost minim
+ Fluxuri maxime
+
+
+Toti algoritmii posibili : DIJKSTRA, DFS, BFS, BF, FW, Kosaraju, Edmonds - Karp, Monte Carlo, Las Vegas
