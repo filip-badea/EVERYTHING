@@ -1,0 +1,8 @@
+input=[0:0.01:1];
+values1=sin(2*pi*1*input);
+values2=sin(2*pi*2*input);
+plot(input,values1,'r');
+hold off
+plot(input,values2,'y');
+hold off
+plot(input,values1+values2,'g');
