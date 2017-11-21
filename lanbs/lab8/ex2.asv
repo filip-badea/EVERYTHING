@@ -1,0 +1,23 @@
+
+s = load('notes_signal.mat');
+fs = s.fs;
+signal = s.notes_signal;
+
+figure;
+plot(signal);
+title('Original signal');
+
+figure;
+y = linspace(0, 500, length(signal));
+stem(y, abs(fft(signal)));
+title('Frequency spectrum of notes signal');
+
+
+figure;
+signal_ham = signal .* hamming(length(signal))';
+plot(signal_ham);
+title('Windowed signal');
+ 
+figure;
+stem(y, abs(fft(signal_ham)));
+title('Hanning signal');
