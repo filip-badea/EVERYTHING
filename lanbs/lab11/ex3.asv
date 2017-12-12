@@ -1,0 +1,30 @@
+[B,A] = butter(64,0.3,'low');
+fvtool(B,A)
+title('Filtru low');
+
+ns = 1:64;
+sin1 = sin(2*pi*0.1*ns);
+sin2 = sin(2*pi*0.25*ns);
+sin3 = sin(2*pi*0.4*ns);
+
+figure;
+stem(sin1);
+Y1 = filter(B,A,sin1);
+hold on;
+stem(Y1);
+title('Filter sinusoid 1');
+
+
+figure;
+stem(sin2);
+Y2 = filter(B,A,sin2);
+hold on;
+stem(Y2);
+title('Filter sinusoid 2');
+
+figure;
+stem(sin3);
+Y3 = filter(B,A,sin3);
+hold on;
+stem(Y3);
+title('Filter sinusoid 3');
